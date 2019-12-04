@@ -28,13 +28,16 @@ public class Main extends Application implements Initializable{
 	@FXML
 	Text t;
 	
+	Stage window;
+	
 	@Override
 	public void start(Stage s) throws IOException{
+		window = s;
 		//Parent root = FXMLLoader.load(getClass().getResource("BattleshipGrid.fxml"));
 		Parent root2 = FXMLLoader.load(getClass().getResource("WelcomeBox.fxml"));
 		
-		s.setScene(new Scene(root2, 599, 400));
-		s.show();
+		window.setScene(new Scene(root2, 599, 400));
+		window.show();
 	}
 	
 	@Override
@@ -42,7 +45,7 @@ public class Main extends Application implements Initializable{
 		saveButton.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent e) {
-				name = nameText.getText();
+				System.exit(0);
 			}
 		});
 	}
